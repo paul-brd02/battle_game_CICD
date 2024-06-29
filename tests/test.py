@@ -11,6 +11,7 @@ class TestPersonnage(TestCase):
         personnage = Personnage()
         personnage.tuer()
         self.assertTrue(personnage.est_mort)
+        self.assertEqual(0, personnage.ptv)
     
     def test_vivant(self):
         personnage = Personnage()
