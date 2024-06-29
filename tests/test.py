@@ -15,3 +15,10 @@ class TestPersonnage(TestCase):
     def test_vivant(self):
         personnage = Personnage()
         self.assertFalse(personnage.est_mort)
+    
+    def test_attaque(self):
+        personnage1 = Personnage()
+        personnage2 = Personnage()
+        personnage2_ptv = personnage2.ptv
+        personnage1.attaque(personnage2)
+        self.assertNotEqual(personnage2_ptv, personnage2.ptv)

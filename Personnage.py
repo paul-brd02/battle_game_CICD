@@ -6,3 +6,6 @@ class Personnage():
     def tuer(self):
         self.est_mort = True
         self.ptv = 0
+    
+    def attaque(self, personnage:'Personnage'):
+        personnage.ptv -= 20
