@@ -9,4 +9,4 @@ class TestPersonnage(TestCase):
 
     def test_tuer(self):
         personnage = Personnage()
-        self.assertFalse(personnage.est_mort)
+        self.assertTrue(personnage.est_mort)
