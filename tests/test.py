@@ -5,21 +5,25 @@ class TestPersonnage(TestCase):
 
     def test_point_de_vie(self):
         personnage = Personnage()
-        self.assertEqual(100, personnage.ptv)
+        self.assertEqual(100, personnage.get_point_de_vie())
 
     def test_tuer(self):
         personnage = Personnage()
         personnage.tuer()
-        self.assertTrue(personnage.est_mort)
-        self.assertEqual(0, personnage.ptv)
+        self.assertTrue(personnage.get_est_mort())
+        self.assertEqual(0, personnage.get_point_de_vie())
     
     def test_vivant(self):
         personnage = Personnage()
-        self.assertFalse(personnage.est_mort)
+        self.assertFalse(personnage.get_est_mort())
     
     def test_attaque(self):
         personnage1 = Personnage()
         personnage2 = Personnage()
-        personnage2_ptv = personnage2.ptv
+        personnage2_point_de_vie = personnage2.get_point_de_vie()
         personnage1.attaque(personnage2)
-        self.assertNotEqual(personnage2_ptv, personnage2.ptv)
+        self.assertNotEqual(personnage2_point_de_vie, personnage2.get_point_de_vie())
+    
+    def test_point_attaque(self):
+        personnage = Personnage()
+        self.assertEqual(50, personnage.get_point_attaque())
