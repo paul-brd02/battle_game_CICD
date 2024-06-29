@@ -8,4 +8,8 @@ class Personnage():
         self.ptv = 0
     
     def attaque(self, personnage:'Personnage'):
-        personnage.ptv -= 20
+        degat = 200
+        if degat > personnage.ptv:
+            personnage.ptv = 0
+        else:
+            personnage.ptv -= degat
