@@ -32,3 +32,8 @@ class TestPersonnage(TestCase):
         personnage = Personnage()
         personnage.reduire_point_de_vie(50)
         self.assertEqual(50, personnage.get_point_de_vie())
+
+    def test_initiliasation_point_de_vie(self):
+        personnage = Personnage()
+        personnage.set_point_de_vie(70)
+        self.assertEqual(70, personnage.get_point_de_vie())
