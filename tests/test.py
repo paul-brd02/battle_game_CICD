@@ -37,3 +37,9 @@ class TestPersonnage(TestCase):
         personnage = Personnage()
         personnage.set_point_de_vie(70)
         self.assertEqual(70, personnage.get_point_de_vie())
+
+    def test_initialisation_point_attaque(self):
+        #Test -> ERREUR
+        personnage = Personnage()
+        personnage.set_point_attaque(130)
+        self.assertEqual(50, personnage.get_point_attaque())
